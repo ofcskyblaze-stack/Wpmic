@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: whatsapp-mic-license
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: ADMIN_SECRET
+        generateValue: true
+      - key: DATA_FILE
+        value: ./data/licenses.json

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=380, initial-scale=1.0" />
+  <title>FBX MUNNA VPN - Loud Mic Pro</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="window-bar">
+    <span class="window-title">FBX MUNNA VPN - Loud Mic Pro</span>
+    <button id="closeBtn" class="close-btn" type="button" aria-label="Close">✕</button>
+  </div>
+
+  <main class="panel">
+    <section class="hero-card">
+      <div class="hero-top">
+        <div>
+          <div class="dev-label">DEVELOPED BY WHATSAPP VPN FBXMUNNA</div>
+          <h1 class="hero-title">
+            WhatsApp VPN<br />
+            FBXMUNNA Loud<br />
+            Mic Pro
+          </h1>
+        </div>
+        <label class="switch" aria-label="Enable Loud Mic Pro">
+          <input id="masterToggle" type="checkbox" checked />
+          <span class="slider-round"></span>
+        </label>
+      </div>
+
+      <div id="hookStatusBanner" class="hook-banner">
+        Hook status: waiting — open or reload WhatsApp Web
+      </div>
+    </section>
+
+    <section class="modes-card">
+      <div class="modes-header">
+        <span>LORD MODES</span>
+        <span>tap to apply</span>
+      </div>
+
+      <div class="modes-grid">
+        <button id="modeRoyalClear" class="mode-btn mode-royal" type="button">
+          <span class="mode-name">Royal Clear</span>
+          <span class="mode-sub">clean loud calls</span>
+        </button>
+
+        <button id="modeLoudMic" class="mode-btn mode-loud active" type="button">
+          <span class="mode-name">WhatsApp<br />Loud Mic</span>
+          <span class="mode-sub">200000x raw-lock dominance</span>
+        </button>
+      </div>
+
+      <p class="modes-note">
+        If WhatsApp Web crackles or clips, use Royal Clear or lower Gain, Loudness, Drive, or Sustain Max Gain.
+      </p>
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="gainSlider">Gain dB / multiplier</label>
+        <span id="gainValue" class="control-val">21 dB / 11x</span>
+      </div>
+      <input id="gainSlider" class="range-input" type="range" min="0" max="100" step="1" value="22" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="loudnessSlider">Loudness Trim</label>
+        <span id="loudnessValue" class="control-val">194445</span>
+      </div>
+      <input id="loudnessSlider" class="range-input" type="range" min="0" max="250000" step="1" value="194445" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="boostSlider">Boost ceiling</label>
+        <span id="boostValue" class="control-val">152778</span>
+      </div>
+      <input id="boostSlider" class="range-input" type="range" min="0" max="250000" step="1" value="152778" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="saturationSlider">Saturation Drive</label>
+        <span id="saturationValue" class="control-val">1.5</span>
+      </div>
+      <input id="saturationSlider" class="range-input" type="range" min="0" max="10" step="0.1" value="1.5" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="compThreshSlider">Compressor Threshold <span class="unit-green">dB</span></label>
+        <span id="compThreshValue" class="control-val">-60</span>
+      </div>
+      <input id="compThreshSlider" class="range-input" type="range" min="-96" max="0" step="1" value="-60" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="compRatioSlider">Compressor Ratio</label>
+        <span id="compRatioValue" class="control-val">20</span>
+      </div>
+      <input id="compRatioSlider" class="range-input" type="range" min="1" max="30" step="1" value="20" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="limiterSlider">Limiter Ceiling <span class="unit-green">dB</span></label>
+        <span id="limiterValue" class="control-val">-0.10</span>
+      </div>
+      <input id="limiterSlider" class="range-input" type="range" min="-12" max="0" step="0.05" value="-0.10" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="presenceSlider">Presence EQ <span class="unit-green">dB</span></label>
+        <span id="presenceValue" class="control-val">24</span>
+      </div>
+      <input id="presenceSlider" class="range-input" type="range" min="-24" max="36" step="1" value="24" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="bassSlider">Bass EQ <span class="unit-green">dB</span></label>
+        <span id="bassValue" class="control-val">-13</span>
+      </div>
+      <input id="bassSlider" class="range-input" type="range" min="-24" max="24" step="1" value="-13" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="trebleSlider">Treble EQ <span class="unit-green">dB</span></label>
+        <span id="trebleValue" class="control-val">18</span>
+      </div>
+      <input id="trebleSlider" class="range-input" type="range" min="-24" max="36" step="1" value="18" />
+    </section>
+
+    <section class="checks-stack">
+      <button id="chkAntiDuck" class="check-card checked" type="button" aria-pressed="true">
+        <span class="check-box">✓</span>
+        <span class="check-label">Anti-duck sustain lock</span>
+      </button>
+
+      <button id="chkRawMic" class="check-card checked" type="button" aria-pressed="true">
+        <span class="check-box">✓</span>
+        <span class="check-label">Raw mic constraint lock</span>
+      </button>
+
+      <button id="chkReverbKeepAlive" class="check-card checked" type="button" aria-pressed="true">
+        <span class="check-box">✓</span>
+        <span class="check-label">Reverb keep-alive layer</span>
+      </button>
+
+      <button id="chkMicKeepAlive" class="check-card checked" type="button" aria-pressed="true">
+        <span class="check-box">✓</span>
+        <span class="check-label">Mic activity keep-alive</span>
+      </button>
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="sustainTargetSlider">Sustain Target <span class="unit-green">dB</span></label>
+        <span id="sustainTargetValue" class="control-val">5</span>
+      </div>
+      <input id="sustainTargetSlider" class="range-input" type="range" min="-20" max="24" step="1" value="5" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="sustainMaxSlider">Sustain Max Gain</label>
+        <span id="sustainMaxValue" class="control-val">120</span>
+      </div>
+      <input id="sustainMaxSlider" class="range-input" type="range" min="0" max="200" step="1" value="120" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="reverbWetSlider">Reverb Wet Mix</label>
+        <span id="reverbWetValue" class="control-val">0.18</span>
+      </div>
+      <input id="reverbWetSlider" class="range-input" type="range" min="0" max="1" step="0.01" value="0.18" />
+    </section>
+
+    <section class="control-card">
+      <div class="control-top">
+        <label for="keepAliveFloorSlider">Keep-Alive Floor</label>
+        <span id="keepAliveFloorValue" class="control-val">0.00120</span>
+      </div>
+      <input id="keepAliveFloorSlider" class="range-input" type="range" min="0" max="0.01" step="0.00005" value="0.00120" />
+    </section>
+
+    <footer class="footer-note">
+      Quetta/Android note: install as an unpacked/signed extension, open WhatsApp Web, reload the tab, then join the call. 200000x is intentionally extreme and may clip on some devices.
+    </footer>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

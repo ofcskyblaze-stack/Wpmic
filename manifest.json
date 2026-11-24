@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp VPN FBXMUNNA Loud Mic Pro",
+  "short_name": "FBX Loud Mic Pro",
+  "version": "1.0.0",
+  "description": "FBX MUNNA VPN - Loud Mic Pro browser control panel for WhatsApp Web.",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_title": "FBX MUNNA VPN - Loud Mic Pro",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
